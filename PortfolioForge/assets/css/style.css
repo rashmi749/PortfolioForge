@@ -1,0 +1,631 @@
+/* PortfolioForge Apple-Inspired Premium Design System */
+
+:root {
+    --bg-color: #f5f5f7;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --nav-bg: rgba(245, 245, 247, 0.75);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --accent-color: #0a3d78;
+    --accent-hover: #072a54;
+    --input-bg: #ffffff;
+    --danger-color: #ff3b30;
+    --success-color: #34c759;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.06);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+[data-bs-theme="dark"] {
+    --bg-color: #000000;
+    --card-bg: rgba(29, 29, 31, 0.75);
+    --text-primary: #f5f5f7;
+    --text-secondary: #86868b;
+    --nav-bg: rgba(0, 0, 0, 0.75);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --accent-color: #3b6fc4;
+    --accent-hover: #588bde;
+    --input-bg: #1d1d1f;
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.015em;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .pf-font-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.022em;
+    color: var(--text-primary);
+}
+
+/* Glassmorphism Navbar */
+.pf-navbar {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.pf-brand {
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--text-primary) !important;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pf-nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition-smooth);
+}
+
+.pf-nav-link:hover {
+    color: var(--text-primary) !important;
+}
+
+.pf-user-dropdown {
+    color: var(--text-primary) !important;
+}
+
+/* Buttons */
+.pf-btn-primary {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 980px;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    transition: var(--transition-smooth);
+}
+
+.pf-btn-primary:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.pf-btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+    border-radius: 980px;
+    padding: 0.5rem 1.25rem;
+    transition: var(--transition-smooth);
+}
+
+.pf-btn-secondary:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Cards */
+.pf-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+.pf-card-hover:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-md);
+}
+
+/* Form Controls */
+.form-control, .form-select {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 12px;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(10, 61, 120, 0.15);
+}
+
+/* Dashboard Layout */
+.pf-dashboard-sidebar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+}
+
+.pf-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+}
+
+.pf-sidebar-link:hover, .pf-sidebar-link.active {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
+/* Timeline Layout */
+.pf-timeline {
+    position: relative;
+    border-left: 2px solid var(--border-color);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.pf-timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.pf-timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 2px solid var(--bg-color);
+}
+
+/* Footer styling */
+.pf-footer {
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.pf-footer-link {
+    transition: var(--transition-smooth);
+}
+
+.pf-footer-link:hover {
+    color: var(--text-primary) !important;
+}
+
+/* Public Portfolio Page Styles */
+.pf-portfolio-hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at top, rgba(10, 61, 120,0.06), transparent 60%);
+}
+
+.pf-avatar-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.pf-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+    box-shadow: var(--shadow-md);
+}
+
+/* Brand Icon */
+.pf-brand-icon {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Hero Badge Pill */
+.pf-badge-pill {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 980px;
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Live Stats */
+.pf-hero-stats h3 {
+    font-size: 1.75rem;
+    color: var(--accent-color);
+}
+
+/* Hero Visual: Browser Mockup */
+.pf-hero-visual {
+    position: relative;
+    max-width: 460px;
+}
+
+.pf-mock-browser {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transform: perspective(1200px) rotateY(-6deg) rotateX(2deg);
+    transition: var(--transition-smooth);
+}
+
+.pf-hero-visual:hover .pf-mock-browser {
+    transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+}
+
+.pf-mock-browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pf-mock-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.pf-mock-url {
+    margin-left: 12px;
+    background: var(--bg-color);
+    border-radius: 980px;
+    padding: 0.2rem 0.9rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    flex-grow: 1;
+    text-align: center;
+}
+
+.pf-mock-browser-body {
+    padding: 2rem;
+}
+
+.pf-mock-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.pf-mock-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.pf-mock-line {
+    height: 10px;
+    border-radius: 6px;
+    background: var(--border-color);
+    margin-bottom: 0.6rem;
+}
+
+.pf-mock-line-lg { width: 70%; }
+.pf-mock-line-sm { width: 45%; }
+
+.pf-mock-chip-row {
+    display: flex;
+    gap: 8px;
+    margin: 1.25rem 0;
+}
+
+.pf-mock-chip {
+    width: 36px;
+    height: 18px;
+    border-radius: 980px;
+    background: rgba(10, 61, 120, 0.15);
+}
+
+.pf-mock-cards {
+    display: flex;
+    gap: 10px;
+}
+
+.pf-mock-card {
+    flex: 1;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--border-color);
+}
+
+.pf-floating-card {
+    position: absolute;
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    box-shadow: var(--shadow-md);
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    /* pf-float handles the gentle bob, pf-bubble-toggle handles show/hide so only
+       one bubble is visible at a time (cycle length 6s: 3s each, with fade) */
+    animation: pf-float 4s ease-in-out infinite, pf-bubble-toggle 6s ease-in-out infinite;
+    opacity: 0;
+}
+
+.pf-floating-card-1 {
+    top: -18px;
+    right: -10px;
+    color: var(--success-color);
+    animation-delay: 0s, 0s;
+}
+
+.pf-floating-card-2 {
+    bottom: 10px;
+    left: -20px;
+    animation-delay: 1.2s, 3s; /* offset by half the toggle cycle so it takes over from card 1 */
+}
+
+@keyframes pf-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Shows the bubble for the first half of the cycle, hides it for the second half,
+   with a short fade at each edge so the swap feels smooth instead of a hard cut. */
+@keyframes pf-bubble-toggle {
+    0%      { opacity: 0; }
+    5%      { opacity: 1; }
+    45%     { opacity: 1; }
+    50%     { opacity: 0; }
+    100%    { opacity: 0; }
+}
+
+@media (max-width: 991px) {
+    .pf-hero-visual { margin-top: 2rem; }
+}
+
+/* Feature Icons */
+.pf-feature-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(10, 61, 120, 0.12);
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.pf-feature-icon-sm {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+}
+
+/* How It Works Steps */
+.pf-step {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    transition: var(--transition-smooth);
+}
+
+.pf-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.pf-step-number {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 6px 16px rgba(10, 61, 120, 0.35);
+    border: none;
+    cursor: default;
+    transition: var(--transition-smooth);
+}
+
+.pf-step:hover .pf-step-number {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 22px rgba(10, 61, 120, 0.45);
+}
+
+/* Final CTA Banner */
+.pf-cta-banner {
+    background: radial-gradient(circle at top, rgba(10, 61, 120,0.10), transparent 65%);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+}
+
+.pf-cta-icon {
+    font-size: 2.25rem;
+    color: var(--accent-color);
+}
+
+/* Portfolio Layout Picker */
+.pf-layout-option {
+    cursor: pointer;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.25rem;
+    transition: var(--transition-smooth);
+}
+
+.pf-layout-option:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.pf-layout-option.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(10, 61, 120, 0.15);
+}
+
+.pf-layout-preview {
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.pf-layout-check {
+    display: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.pf-layout-option.active .pf-layout-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    height: 3px;
+    background: var(--accent-color);
+    width: 0%;
+    z-index: 1030;
+    transition: width 0.1s ease-out;
+}
+
+/* Ambient decorative bubbles (sitewide, subtle, dark-blue tinted) */
+.pf-bg-bubbles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.pf-bubble {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.14;
+    background: radial-gradient(circle at 30% 30%, var(--accent-color), transparent 70%);
+    animation: pf-bubble-drift 18s ease-in-out infinite;
+}
+
+[data-bs-theme="dark"] .pf-bubble {
+    opacity: 0.12;
+    filter: blur(95px);
+}
+
+.pf-bubble-1 {
+    width: 360px;
+    height: 360px;
+    top: -100px;
+    left: -100px;
+    animation-duration: 22s;
+}
+
+.pf-bubble-2 {
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    right: -120px;
+    background: radial-gradient(circle at 30% 30%, var(--accent-hover), transparent 70%);
+    animation-duration: 26s;
+    animation-delay: 2s;
+}
+
+.pf-bubble-3 {
+    width: 260px;
+    height: 260px;
+    bottom: -90px;
+    left: 20%;
+    animation-duration: 20s;
+    animation-delay: 4s;
+}
+
+.pf-bubble-4 {
+    width: 220px;
+    height: 220px;
+    bottom: 15%;
+    right: 15%;
+    background: radial-gradient(circle at 30% 30%, var(--accent-hover), transparent 70%);
+    animation-duration: 24s;
+    animation-delay: 1s;
+}
+
+.pf-bubble-5 {
+    width: 220px;
+    height: 220px;
+    top: 45%;
+    left: 45%;
+    animation-duration: 28s;
+    animation-delay: 3s;
+}
+
+@keyframes pf-bubble-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(30px, -20px) scale(1.08); }
+    66%      { transform: translate(-20px, 25px) scale(0.95); }
+}
+
+@media (max-width: 767px) {
+    .pf-bubble { display: none; }
+}
+
+/* Ensure normal page content sits above the ambient bubble layer */
+.pf-navbar,
+main,
+.container,
+footer {
+    position: relative;
+    z-index: 1;
+}
